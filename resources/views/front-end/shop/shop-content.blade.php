@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Shop @endsection
+@extends("front-end.master") @section('title') Ogani | Shop @endsection
 @section('body')
 <!-- Breadcrumb Section Begin -->
 <section

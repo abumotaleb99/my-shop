@@ -18,3 +18,7 @@ Route::get('/', [OganiController::class, 'index'])->name('home');
 Route::get('/category-product', [OganiController::class, 'categoryProduct']);
 Route::get('/shop', [OganiController::class, 'shop'])->name('shop');
 Route::get('/contact', [OganiController::class, 'contact'])->name('contact');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

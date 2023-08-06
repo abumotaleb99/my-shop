@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Contact @endsection
+@extends("front-end.master") @section('title') Ogani | Contact @endsection
 @section('body')
 <!-- Breadcrumb Section Begin -->
 <section

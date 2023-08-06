@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Home @endsection @section('body')
+@extends("front-end.master") @section('title') Ogani | Home @endsection @section('body')
 <!-- Featured Section Begin -->
 <section class="featured spad">
   <div class="container">
