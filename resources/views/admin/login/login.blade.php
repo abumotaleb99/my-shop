@@ -9,12 +9,12 @@
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="{{ asset('/admin') }}/assets/img/apple-icon.png"
+      href="{{ asset('/admin') }}assets/img/apple-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
-      href="{{ asset('/admin') }}/assets/img/favicon.png"
+      href="{{ asset('/admin') }}assets/img/favicon.png"
     />
     <title>Dashboard | Login</title>
     <!--     Fonts and icons     -->
@@ -106,7 +106,7 @@
                           type="submit"
                           class="btn bg-gradient-info w-100 mt-4 mb-0"
                         >
-                          Sign in
+                          <!-- Sign in -->
                         </input>
                       </div>
                     </form>

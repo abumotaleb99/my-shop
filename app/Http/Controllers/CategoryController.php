@@ -26,4 +26,36 @@ class CategoryController extends Controller
 
         return redirect("/category/add-category")->with("message", "Category Info Saved Successfully.");
     }
+
+    public function manageCategoryInfo() {
+        $categories = Category::all();
+
+        return view("admin.category.manage-category", ['categories' => $categories]);
+    }
+
+    public function editCategoryInfo($id) {
+        $category = Category::find($id);
+
+        return view("admin.category.edit-category", ["category" => $category]);
+    }
+
+    public function updateCategoryInfo(Request $request) {
+        $category = Category::find($request->id);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->status = $request->status;
+        $category->save();
+
+        return redirect("/category/manage-category")->with("message", "Category Info Updated Successfully.");
+    }
+
+    public function deleteCategoryInfo($id) {
+        $category = Category::find($id);
+
+        $category->delete();
+
+        return redirect("/category/manage-category")->with("message", "Category Info Deleted Successfully.");
+    }
+
 }

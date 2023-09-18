@@ -8,14 +8,14 @@
               <h5>Add Category</h5>
             </div>
             @if($message = Session::get('message'))
-            <p class="text-center text-success" >{{ $message }}</p>
+            <p id="message" class="text-center text-success" >{{ $message }}</p>
             @endif
             
             <div class="card-body">
               <form role="form text-left" action="{{ url('category/new-category') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <input type="text" class="form-control" name="name" placeholder="Name">
+                  <input type="text" class="form-control" name="name" placeholder="Name" >
                 </div>
                 <div class="mb-3">
                   <textarea class="form-control" name="description" placeholder="Description"></textarea>

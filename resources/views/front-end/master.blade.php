@@ -17,42 +17,42 @@
     <!-- Css Styles -->
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/bootstrap.min.css"
+      href="{{ asset('/') }}front-end/css/bootstrap.min.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/font-awesome.min.css"
+      href="{{ asset('/') }}front-end/css/font-awesome.min.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/elegant-icons.css"
+      href="{{ asset('/') }}front-end/css/elegant-icons.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/nice-select.css"
+      href="{{ asset('/') }}front-end/css/nice-select.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/jquery-ui.min.css"
+      href="{{ asset('/') }}front-end/css/jquery-ui.min.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/owl.carousel.min.css"
+      href="{{ asset('/') }}front-end/css/owl.carousel.min.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/slicknav.min.css"
+      href="{{ asset('/') }}front-end/css/slicknav.min.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('/') }}/front-end/css/style.css"
+      href="{{ asset('/') }}front-end/css/style.css"
       type="text/css"
     />
   </head>
@@ -68,7 +68,7 @@
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
         <a href="{{ url('/') }}"
-          ><img src="{{ asset('/') }}/front-end/img/logo.png" alt=""
+          ><img src="{{ asset('/') }}front-end/img/logo.png" alt=""
         /></a>
       </div>
       <div class="humberger__menu__cart">
@@ -139,7 +139,7 @@
           <div class="col-lg-3">
             <div class="header__logo">
               <a href="{{ url('/') }}"
-                ><img src="{{ asset('/') }}/front-end/img/logo.png" alt=""
+                ><img src="{{ asset('/') }}front-end/img/logo.png" alt=""
               /></a>
             </div>
           </div>
@@ -226,7 +226,7 @@
             @if(Route::currentRouteName() === 'home')
             <div
               class="hero__item set-bg"
-              data-setbg="{{ asset('/') }}/front-end/img/hero/banner.jpg"
+              data-setbg="{{ asset('/') }}front-end/img/hero/banner.jpg"
             >
               <div class="hero__text">
                 <span>FRUIT FRESH</span>
@@ -266,7 +266,7 @@
               </div>
               <div class="footer__copyright__payment">
                 <img
-                  src="{{ asset('/') }}/front-end/img/payment-item.png"
+                  src="{{ asset('/') }}front-end/img/payment-item.png"
                   alt=""
                 />
               </div>
@@ -278,13 +278,13 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="{{ asset('/') }}/front-end/js/jquery-3.3.1.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/bootstrap.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/jquery.nice-select.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/jquery-ui.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/jquery.slicknav.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/mixitup.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/owl.carousel.min.js"></script>
-    <script src="{{ asset('/') }}/front-end/js/main.js"></script>
+    <script src="{{ asset('/') }}front-end/js/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/bootstrap.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/jquery-ui.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/jquery.slicknav.js"></script>
+    <script src="{{ asset('/') }}front-end/js/mixitup.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('/') }}front-end/js/main.js"></script>
   </body>
 </html>

@@ -35,7 +35,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ $currentRoute === 'add-category' ? 'active' : '' }}" href="{{ asset('/category/add-category') }}">
+        <a class="nav-link {{ $currentRoute === 'add-category' ? 'active' : '' }}" href="{{ url('/category/add-category') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -54,7 +54,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ asset('/admin') }}/pages/tables.html">
+        <a class="nav-link {{ $currentRoute === 'manage-category' ? 'active' : '' }}" href="{{ url('/category/manage-category') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

@@ -14,7 +14,7 @@
         <div class="featured__item">
           <div
             class="featured__item__pic set-bg"
-            data-setbg="{{ asset('/') }}/front-end/img/featured/feature-1.jpg"
+            data-setbg="{{ asset('/') }}front-end/img/featured/feature-1.jpg"
           >
             <ul class="featured__item__pic__hover">
               <li>
@@ -43,7 +43,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="banner__pic">
           <img
-            src="{{ asset('/') }}/front-end/img/banner/banner-1.jpg"
+            src="{{ asset('/') }}front-end/img/banner/banner-1.jpg"
             alt=""
           />
         </div>
@@ -51,7 +51,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="banner__pic">
           <img
-            src="{{ asset('/') }}/front-end/img/banner/banner-2.jpg"
+            src="{{ asset('/') }}front-end/img/banner/banner-2.jpg"
             alt=""
           />
         </div>

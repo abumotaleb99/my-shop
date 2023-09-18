@@ -3,7 +3,7 @@
 <!-- Breadcrumb Section Begin -->
 <section
   class="breadcrumb-section set-bg"
-  data-setbg="{{ asset('/') }}/front-end/img/breadcrumb.jpg"
+  data-setbg="{{ asset('/') }}front-end/img/breadcrumb.jpg"
 >
   <div class="container">
     <div class="row">
@@ -50,7 +50,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-1.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-1.jpg"
                         alt=""
                       />
                     </div>
@@ -62,7 +62,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-2.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-2.jpg"
                         alt=""
                       />
                     </div>
@@ -74,7 +74,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-3.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-3.jpg"
                         alt=""
                       />
                     </div>
@@ -88,7 +88,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-1.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-1.jpg"
                         alt=""
                       />
                     </div>
@@ -100,7 +100,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-2.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-2.jpg"
                         alt=""
                       />
                     </div>
@@ -112,7 +112,7 @@
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}/front-end/img/latest-product/lp-3.jpg"
+                        src="{{ asset('/') }}front-end/img/latest-product/lp-3.jpg"
                         alt=""
                       />
                     </div>
@@ -138,7 +138,7 @@
             <div class="product__item">
               <div
                 class="product__item__pic set-bg"
-                data-setbg="{{ asset('/') }}/front-end/img/product/product-1.jpg"
+                data-setbg="{{ asset('/') }}front-end/img/product/product-1.jpg"
               >
                 <ul class="product__item__pic__hover">
                   <li>
