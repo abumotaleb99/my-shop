@@ -25,7 +25,7 @@
             <div class="mb-3">
               <select class="form-control" name="status">
                 <option {{ $brand->status == 1 ? "selected" : "" }} value="1">Published</option>
-                <option {{ $brand->status == 1 ? "selected" : "" }} value="0">Unpublished</option>
+                <option {{ $brand->status == 0 ? "selected" : "" }} value="0">Unpublished</option>
               </select>
             </div>    
             <div class="text-center">
