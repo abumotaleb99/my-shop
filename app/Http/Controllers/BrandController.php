@@ -3,83 +3,65 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view("admin.brand.add-brand");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    
+    public function saveBrandInfo(Request $request) {
+        $this->validate($request, [
+            'name' => 'required|regex:/^[\pL\s\-]+$/u|min:3|max:15',
+            'description' => 'required',
+            'status' => 'required'
+        ]);
+
+        // return $request->all();
+
+        $brand = new Brand();
+        $brand->name = $request->name;
+        $brand->description = $request->description;
+        $brand->status = $request->status;
+        $brand->save();
+
+        return redirect("/brand/add-brand")->with("message", "Brand Info Saved Successfully.");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function manageBrandInfo() {
+        $brands = Brand::all();
+
+        return view("admin.brand.manage-brand", ['brands' => $brands]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function editBrandInfo($id) {
+        $brand = Brand::find($id);
+
+        return view("admin.brand.edit-brand", ["brand" => $brand]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function updateBrandInfo(Request $request) {
+        $brand = Brand::find($request->id);
+
+        $brand->name = $request->name;
+        $brand->description = $request->description;
+        $brand->status = $request->status;
+        $brand->save();
+
+        return redirect("/brand/manage-brand")->with("message", "Brand Info Updated Successfully.");
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function deleteBrandInfo($id) {
+        $brand = Brand::find($id);
+
+        $brand->delete();
+
+        return redirect("/brand/manage-brand")->with("message", "Brand Info Deleted Successfully.");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }
