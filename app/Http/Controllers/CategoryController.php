@@ -14,6 +14,11 @@ class CategoryController extends Controller
 
     public function saveCategoryInfo(Request $request) {
         // return $request->all();
+        $this->validate($request, [
+            'name' => 'required|regex:/^[\pL\s\-]+$/u|min:3|max:15',
+            'description' => 'required',
+            'status' => 'required'
+        ]);
 
         $category = new Category();
         $category->name = $request->name;
