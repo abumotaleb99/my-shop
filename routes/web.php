@@ -5,6 +5,7 @@ use App\Http\Controllers\OganiController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,11 @@ Route::get('/product/manage-product', [ProductController::class, 'manageProductI
 Route::get('/product/edit-product/{id}', [ProductController::class, 'editProductInfo'])->name('edit-product');
 Route::post('/product/update-product', [ProductController::class, 'updateProductInfo'])->name('update-product');
 Route::get('/product/delete-product/{id}', [ProductController::class, 'deleteProductInfo'])->name('delete-product');
+
+// Cart
+Route::get('/cart/show', [CartController::class, 'showCart']);
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::get('/cart-item/delete/{rowId}', [CartController::class, 'deleteCartItem'])->name('delete-cart-item');
 
 
 

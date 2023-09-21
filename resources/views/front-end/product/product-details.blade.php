@@ -37,26 +37,24 @@
                         <h3>{{ $productDetails->name }}</h3>
                         <div class="product__details__price">{{ $productDetails->price }} TK</div>
                         <p>{{ $productDetails->short_description }}</p>
+                        {!! Form::open(['url' => '/add-to-cart', 'method' => 'post']) !!}
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="1">
+                                    <input type="text" name="qty" value="1"> 
+                                    <input type="hidden" name="product_id" value="{{ $productDetails->id }}"> 
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+						<input type="submit" value="ADD TO CARD" class="primary-btn border-0">
+                        <div>
+                            <span class="text-danger">{{ $errors->has('qty') ? $errors->first('qty') : "" }}</span>
+                        </div>
+                        {!! Form::close() !!} 
                         <!-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> -->
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
                             <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <!-- <li><b>Share on</b>
-                                <div class="share">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </li> -->
                         </ul>
                     </div>
                 </div>

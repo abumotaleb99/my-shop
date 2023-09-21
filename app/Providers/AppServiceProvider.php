@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use View;
 use App\Models\Category;
+use Cart;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -30,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function($view) {
             $view->with('categories', Category::where('status', 1)->get());
+        });
+
+        View::composer('*', function($view) {
+            $view->with('cartItems', Cart::content());
         });
     }
 }
