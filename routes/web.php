@@ -18,7 +18,8 @@ use App\Http\Controllers\ProductController;
 */
  
 Route::get('/', [OganiController::class, 'index'])->name('home');
-Route::get('/category-product', [OganiController::class, 'categoryProduct']);
+Route::get('/category-product/{id}', [OganiController::class, 'categoryProduct']);
+Route::get('/product-details/{id}', [OganiController::class, 'productDetails']);
 Route::get('/shop', [OganiController::class, 'shop'])->name('shop');
 Route::get('/contact', [OganiController::class, 'contact'])->name('contact');
 

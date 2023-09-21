@@ -3,7 +3,7 @@
 <!-- Breadcrumb Section Begin -->
 <section
   class="breadcrumb-section set-bg"
-  data-setbg="{{ asset('/') }}front-end/img/breadcrumb.jpg"
+  style="background-color: #7fad39;"
 >
   <div class="container">
     <div class="row">
@@ -28,18 +28,11 @@
       <div class="col-lg-3 col-md-5">
         <div class="sidebar">
           <div class="sidebar__item">
-            <h4>Department</h4>
+            <h4>Categories</h4>
             <ul>
-              <li><a href="#">Fresh Meat</a></li>
-              <li><a href="#">Vegetables</a></li>
-              <li><a href="#">Fruit & Nut Gifts</a></li>
-              <li><a href="#">Fresh Berries</a></li>
-              <li><a href="#">Ocean Foods</a></li>
-              <li><a href="#">Butter & Eggs</a></li>
-              <li><a href="#">Fastfood</a></li>
-              <li><a href="#">Fresh Onion</a></li>
-              <li><a href="#">Papayaya & Crisps</a></li>
-              <li><a href="#">Oatmeal</a></li>
+              @foreach($categories as $category)
+              <li><a href="{{ url('/category-product', ['id' => $category->id]) }}">{{ $category->name }}</a></li>
+              @endforeach
             </ul>
           </div>
           <div class="sidebar__item">
@@ -47,80 +40,36 @@
               <h4>Latest Products</h4>
               <div class="latest-product__slider owl-carousel">
                 <div class="latest-prdouct__slider__item">
-                  <a href="#" class="latest-product__item">
+                  @foreach($LatestCategoryProducts as $LatestCategoryProduct)
+                  <a href="{{ url('product-details', ['id' => $LatestCategoryProduct->id]) }}" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-1.jpg"
+                        src="{{ asset($LatestCategoryProduct->image) }}"
                         alt=""
                       />
                     </div>
                     <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
+                      <h6>{{ $LatestCategoryProduct->name }}</h6>
+                      <span>{{ $LatestCategoryProduct->price }} TK</span>
                     </div>
                   </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-2.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-3.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
-                    </div>
-                  </a>
+                  @endforeach
                 </div>
                 <div class="latest-prdouct__slider__item">
-                  <a href="#" class="latest-product__item">
+                  @foreach($LatestCategoryProducts as $LatestCategoryProduct)
+                  <a href="{{ url('product-details', ['id' => $LatestCategoryProduct->id]) }}" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-1.jpg"
+                        src="{{ asset($LatestCategoryProduct->image) }}"
                         alt=""
                       />
                     </div>
                     <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
+                      <h6>{{ $LatestCategoryProduct->name }}</h6>
+                      <span>{{ $LatestCategoryProduct->price }} TK</span>
                     </div>
                   </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-2.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img
-                        src="{{ asset('/') }}front-end/img/latest-product/lp-3.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
-                    </div>
-                  </a>
+                  @endforeach
                 </div>
               </div>
             </div>
@@ -130,31 +79,39 @@
       <div class="col-lg-9 col-md-7">
         <div class="row">
           <div class="filter__found" style="padding-left: 10px">
-            <h6><span>16</span> Products found</h6>
+            <h6><span>{{ count($AllCategoryProducts) }}</span> Products found</h6>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product__item">
-              <div
-                class="product__item__pic set-bg"
-                data-setbg="{{ asset('/') }}front-end/img/product/product-1.jpg"
-              >
-                <ul class="product__item__pic__hover">
-                  <li>
-                    <a href="#"><i class="fa fa-retweet"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6><a href="#">Crab Pool Security</a></h6>
-                <h5>$30.00</h5>
+          @if (count($AllCategoryProducts) > 0)
+            @foreach($AllCategoryProducts as $categoryProduct)
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="product__item">
+                <div
+                  class="product__item__pic set-bg"
+                  data-setbg="{{ asset($categoryProduct->image) }}"
+                >
+                  <ul class="product__item__pic__hover">
+                    <li>
+                      <a href="{{ url('product-details', ['id' => $categoryProduct->id]) }}"><i class="fa fa-retweet"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product__item__text">
+                  <h6><a href="{{ url('product-details', ['id' => $categoryProduct->id]) }}">{{ $categoryProduct->name }}</a></h6>
+                  <h5>{{ $categoryProduct->price }} TK</h5>
+                </div>
               </div>
             </div>
+            @endforeach
+          @else 
+          <div class="col-lg-12">
+            <p class="text-center font-weight-bold">No Product Found!</p>
           </div>
+          @endif
         </div>
         <div class="product__pagination">
           <a href="#">1</a>

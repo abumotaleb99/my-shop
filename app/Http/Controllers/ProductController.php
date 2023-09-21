@@ -25,7 +25,7 @@ class ProductController extends Controller
         
     public function saveProductInfo(Request $request) {
         $this->validate($request, [
-            'name' => 'required|regex:/^[\pL\s\-]+$/u|min:3|max:15',
+            'name' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
             'price' => 'required',
@@ -57,7 +57,7 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->save();
 
-        return redirect("/brand/add-product")->with("message", "Brand Info Saved Successfully.");
+        return redirect("/product/add-product")->with("message", "Product Info Saved Successfully.");
     }
 
     public function manageProductInfo() {
@@ -95,7 +95,7 @@ class ProductController extends Controller
 
     public function updateProductInfo(Request $request) {
         $this->validate($request, [
-            'name' => 'required|regex:/^[\pL\s\-]+$/u|min:3|max:15',
+            'name' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
             'price' => 'required',

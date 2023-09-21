@@ -182,20 +182,12 @@
             <div class="hero__categories">
               <div class="hero__categories__all">
                 <i class="fa fa-bars"></i>
-                <span>All departments</span>
+                <span>All Categories</span>
               </div>
               <ul>
-                <li><a href="{{ url('/category-product') }}">Fresh Meat</a></li>
-                <li><a href="#">Vegetables</a></li>
-                <li><a href="#">Fruit & Nut Gifts</a></li>
-                <li><a href="#">Fresh Berries</a></li>
-                <li><a href="#">Ocean Foods</a></li>
-                <li><a href="#">Butter & Eggs</a></li>
-                <li><a href="#">Fastfood</a></li>
-                <li><a href="#">Fresh Onion</a></li>
-                <li><a href="#">Papayaya & Crisps</a></li>
-                <li><a href="#">Oatmeal</a></li>
-                <li><a href="#">Fresh Bananas</a></li>
+                @foreach($categories as $category)
+                <li><a href="{{ url('/category-product', ['id' => $category->id]) }}">{{ $category->name }}</a></li>
+                @endforeach
               </ul>
             </div>
 
@@ -229,8 +221,9 @@
               data-setbg="{{ asset('/') }}front-end/img/hero/banner.jpg"
             >
               <div class="hero__text">
-                <span>FRUIT FRESH</span>
-                <h2>Vegetable <br />100% Organic</h2>
+                <span>New Arrivals</span>
+                <h1 >BIG SALE</h1>
+                <h2>Up To <br />50% Off</h2>
                 <p>Free Pickup and Delivery Available</p>
                 <a href="{{ url('/shop') }}" class="primary-btn">SHOP NOW</a>
               </div>
