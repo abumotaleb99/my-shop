@@ -81,7 +81,7 @@
       </div>
       <div class="humberger__menu__widget">
         <div class="header__top__right__auth">
-          <a href="#"><i class="fa fa-user"></i> Login</a>
+          <a href="{{ url('/customer/login') }}"><i class="fa fa-user"></i> Login</a>
         </div>
       </div>
       <nav class="humberger__menu__nav mobile-menu">
@@ -127,7 +127,14 @@
                   <a href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
                 <div class="header__top__right__auth">
-                  <a href="#"><i class="fa fa-user"></i> Login</a>
+                  @if(Session::get('myShopCustomerId'))
+                  <a href="#" onclick="document.getElementById('customerLogoutForm').submit();">Logout</a>
+                  <form id="customerLogoutForm" action="{{ url('/customer/logout') }}" method="POST">
+                    @csrf
+                  </form>
+                  @else
+                  <a href="{{ url('/customer/login') }}"><i class="fa fa-user"></i> Login</a>
+                  @endif
                 </div>
               </div>
             </div>

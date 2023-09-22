@@ -6,6 +6,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,27 @@ use App\Http\Controllers\CartController;
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
+
 Route::get('/', [OganiController::class, 'index'])->name('home');
 Route::get('/category-product/{id}', [OganiController::class, 'categoryProduct']);
 Route::get('/product-details/{id}', [OganiController::class, 'productDetails']);
 Route::get('/shop', [OganiController::class, 'shop'])->name('shop');
 Route::get('/contact', [OganiController::class, 'contact'])->name('contact');
+
+// Cart
+Route::get('/cart/show', [CartController::class, 'showCart']);
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::get('/cart-item/delete/{rowId}', [CartController::class, 'deleteCartItem'])->name('delete-cart-item');
+
+// Customer
+Route::get('/customer/register', [CustomerController::class, 'showCustomerRegisterForm'])->name('customer-register');
+Route::post('/customer/customer-register', [CustomerController::class, 'customerRegister']);
+Route::get('/customer/login', [CustomerController::class, 'showCustomerLoginForm'])->name('customer-login');
+Route::post('/customer/customer-login', [CustomerController::class, 'customerLogin']);
+Route::post('/customer/logout', [CustomerController::class, 'customerLogout'])->name('customer-logout');
+
+// Checkout, Billing and Payment
+Route::get('/checkout', [CheckoutController::class, 'index']);
 
 
 // Category
@@ -48,11 +65,6 @@ Route::get('/product/manage-product', [ProductController::class, 'manageProductI
 Route::get('/product/edit-product/{id}', [ProductController::class, 'editProductInfo'])->name('edit-product');
 Route::post('/product/update-product', [ProductController::class, 'updateProductInfo'])->name('update-product');
 Route::get('/product/delete-product/{id}', [ProductController::class, 'deleteProductInfo'])->name('delete-product');
-
-// Cart
-Route::get('/cart/show', [CartController::class, 'showCart']);
-Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
-Route::get('/cart-item/delete/{rowId}', [CartController::class, 'deleteCartItem'])->name('delete-cart-item');
 
 
 

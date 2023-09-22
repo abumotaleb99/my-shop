@@ -35,8 +35,8 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @php($sum = 0)
                             @if (count($cartItems) > 0)
-                                @php($sum = 0)
                                 @foreach($cartItems as $cartItem)
                                 <tr>
                                     <td class="shoping__cart__item" style="padding: 0">
@@ -100,7 +100,7 @@
                             <li>VAT <span> {{ $vat = 0 }}</span></li>
                             <li>Total <span>{{ $orderTotal = $sum + $vat }}</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        <a href="{{ url('/checkout') }}" class="primary-btn">PROCEED TO CHECKOUT</a>
                     </div>
                 </div>
             </div>
