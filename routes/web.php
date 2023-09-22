@@ -39,8 +39,9 @@ Route::post('/customer/customer-login', [CustomerController::class, 'customerLog
 Route::post('/customer/logout', [CustomerController::class, 'customerLogout'])->name('customer-logout');
 
 // Checkout, Billing and Payment
-Route::get('/checkout', [CheckoutController::class, 'index']);
-
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/order/new-order', [CheckoutController::class, 'newOrder'])->name('new-order');
+Route::get('/order/success', [CheckoutController::class, 'successOrder'])->name('success-order');
 
 // Category
 Route::get('/category/add-category', [CategoryController::class, 'index'])->name('add-category');

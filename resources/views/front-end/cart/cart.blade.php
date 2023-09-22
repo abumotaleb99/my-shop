@@ -99,8 +99,15 @@
                             <li>Subtotal <span>{{ $sum }}</span></li>
                             <li>VAT <span> {{ $vat = 0 }}</span></li>
                             <li>Total <span>{{ $orderTotal = $sum + $vat }}</span></li>
+                            <?php Session::put('myShopOrderTotal', $orderTotal); ?>
                         </ul>
-                        <a href="{{ url('/checkout') }}" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        @if(Session::get('myShopCustomerId'))
+                        <!-- <a href="{{ url('/checkout') }}" class="primary-btn">PROCEED TO CHECKOUT</a> -->
+                        <a href="{{ count($cartItems) > 0 ? url('/checkout') : 'javascript:void(0)' }}" class="primary-btn {{ count($cartItems) === 0 ? ' disabled' : '' }}">PROCEED TO CHECKOUT</a>
+                        @else
+                        <!-- <a href="{{ url('/customer/login') }}" class="primary-btn">PROCEED TO CHECKOUT</a> -->
+                        <a href="{{ count($cartItems) > 0 ? url('/customer/login') : 'javascript:void(0)' }}" class="primary-btn {{ count($cartItems) === 0 ? ' disabled' : '' }}">PROCEED TO CHECKOUT</a>
+                        @endif
                     </div>
                 </div>
             </div>

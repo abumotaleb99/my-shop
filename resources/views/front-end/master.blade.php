@@ -77,7 +77,7 @@
             <a href="{{ url('cart/show') }}"><i class="fa fa-shopping-bag"></i> <span>{{ count($cartItems) }}</span></a>
           </li>
         </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
+        <div class="header__cart__price">item: <span>{{ Session::get('myShopOrderTotal') ? Session::get('myShopOrderTotal') : "0" }} TK</span></div>
       </div>
       <div class="humberger__menu__widget">
         <div class="header__top__right__auth">
@@ -168,7 +168,7 @@
                   >
                 </li>
               </ul>
-              <div class="header__cart__price">item: <span>$150.00</span></div>
+              <div class="header__cart__price">item: <span>{{ Session::get('myShopOrderTotal') ?  Session::get('myShopOrderTotal') : "0" }} TK</span></div>
             </div>
           </div>
         </div>
