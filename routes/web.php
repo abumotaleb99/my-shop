@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,9 @@ Route::get('/product/edit-product/{id}', [ProductController::class, 'editProduct
 Route::post('/product/update-product', [ProductController::class, 'updateProductInfo'])->name('update-product');
 Route::get('/product/delete-product/{id}', [ProductController::class, 'deleteProductInfo'])->name('delete-product');
 
+// Order
+Route::get('/order/manage-order', [OrderController::class, 'manageOrderInfo'])->name('manage-order');
+Route::get('/order/view-order/{id}', [OrderController::class, 'viewOrderInfo'])->name('view-order');
 
 
 Auth::routes();
