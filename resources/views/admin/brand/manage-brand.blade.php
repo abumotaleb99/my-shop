@@ -52,6 +52,9 @@
           </table>
         </div>
       </div>
+      <div class="ps-4 pe-1">
+      {{ $brands->onEachSide(1)->links() }}
+      </div>
     </div>
   </div>
 </div>

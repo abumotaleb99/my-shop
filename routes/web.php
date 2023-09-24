@@ -26,6 +26,7 @@ Route::get('/category-product/{id}', [OganiController::class, 'categoryProduct']
 Route::get('/product-details/{id}', [OganiController::class, 'productDetails']);
 Route::get('/shop', [OganiController::class, 'shop'])->name('shop');
 Route::get('/contact', [OganiController::class, 'contact'])->name('contact');
+Route::post('/search-product', [OganiController::class, 'searchProduct'])->name('search-product');
 
 // Cart
 Route::get('/cart/show', [CartController::class, 'showCart']);

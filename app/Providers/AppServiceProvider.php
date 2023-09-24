@@ -6,6 +6,8 @@ use View;
 use App\Models\Category;
 use Cart;
 
+use Illuminate\Pagination\Paginator;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -36,5 +38,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view) {
             $view->with('cartItems', Cart::content());
         });
+
+        Paginator::useBootstrapFive();
+        
     }
 }

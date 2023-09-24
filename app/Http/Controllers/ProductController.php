@@ -76,7 +76,7 @@ class ProductController extends Controller
                             'products.image',
                             'products.status'
                         )
-                        ->get();
+                        ->paginate(10);
 
         return view("admin.product.manage-product", ['products' => $products]);
     }

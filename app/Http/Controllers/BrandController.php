@@ -33,7 +33,7 @@ class BrandController extends Controller
     }
 
     public function manageBrandInfo() {
-        $brands = Brand::all();
+        $brands = Brand::paginate(10);
 
         return view("admin.brand.manage-brand", ['brands' => $brands]);
     }

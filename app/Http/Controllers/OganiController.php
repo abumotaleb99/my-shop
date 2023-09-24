@@ -25,7 +25,8 @@ class OganiController extends Controller
     public function categoryProduct($id) {
         $AllCategoryProducts = Product::where('category_id', $id)
                                     ->where('status', 1)
-                                    ->get();
+                                    ->paginate(9);
+
         $LatestCategoryProducts = Product::where('category_id', $id)
                                     ->where('status', 1)
                                     ->orderBy('created_at', 'desc') 
@@ -53,7 +54,9 @@ class OganiController extends Controller
     }
 
     public function shop() {
-        $allProducts = Product::where('status', 1)->get();
+        $allProducts = Product::where('status', 1)
+                                ->paginate(9);
+
         $latestProducts = Product::where('status', 1)
                                     ->orderBy('created_at', 'desc') 
                                     ->limit(3)
@@ -67,6 +70,19 @@ class OganiController extends Controller
     public function contact() {
         return view('front-end.contact.contact-content');
     }
+
+    public function searchProduct(Request $request) {
+        $searchTerm = $request->input('search');
+    
+        $products = Product::where('status', 1)
+            ->where('name', 'like', '%' . $searchTerm . '%')
+            ->paginate(12);
+    
+        return view('front-end.home.search', [
+            'products' => $products,
+        ]);
+    }
+    
 
 
 

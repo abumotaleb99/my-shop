@@ -67,6 +67,9 @@
             </tbody>
           </table>
         </div>
+        <div class="ps-4 pe-1">
+        {{ $products->onEachSide(1)->links() }}
+        </div>
       </div>
     </div>
   </div>

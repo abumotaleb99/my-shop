@@ -19,7 +19,7 @@ class OrderController extends Controller
                     ->join('customers', 'orders.customer_id', '=', 'customers.id')
                     ->join('payments', 'orders.id', '=', 'payments.order_id')
                     ->select('orders.*', 'customers.first_name', 'customers.last_name', 'payments.payment_type', 'payments.status AS payment_status')
-                    ->get();
+                    ->paginate(10);
 
         return view("admin.order.manage-order", [
             'orders' => $orders
