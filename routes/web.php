@@ -45,6 +45,8 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/order/new-order', [CheckoutController::class, 'newOrder'])->name('new-order');
 Route::get('/order/success', [CheckoutController::class, 'successOrder'])->name('success-order');
 
+
+Route::middleware(['check.user'])->group(function () {
 // Category
 Route::get('/category/add-category', [CategoryController::class, 'index'])->name('add-category');
 Route::post('/category/new-category', [CategoryController::class, 'saveCategoryInfo'])->name('new-category');
@@ -73,6 +75,7 @@ Route::get('/product/delete-product/{id}', [ProductController::class, 'deletePro
 Route::get('/order/manage-order', [OrderController::class, 'manageOrderInfo'])->name('manage-order');
 Route::get('/order/view-order/{id}', [OrderController::class, 'viewOrderInfo'])->name('view-order');
 
+});
 
 Auth::routes();
 

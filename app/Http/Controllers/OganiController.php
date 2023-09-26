@@ -41,6 +41,7 @@ class OganiController extends Controller
 
     public function productDetails($id) {
         $productDetails = Product::find($id);
+        
         $relatedProducts = Product::where('category_id', $productDetails->category_id)
                                     ->where('status', 1)
                                     ->where('id', '<>', $productDetails->id) // Exclude the current product

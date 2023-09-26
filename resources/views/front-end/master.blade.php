@@ -265,10 +265,10 @@
                 </p>
               </div>
               <div class="footer__copyright__payment">
-                <img
+                <!-- <img
                   src="{{ asset('/') }}front-end/img/payment-item.png"
                   alt=""
-                />
+                /> -->
               </div>
             </div>
           </div>
