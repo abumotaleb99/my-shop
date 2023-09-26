@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Ogani | Contact @endsection
+@extends("front-end.master") @section('title') My Shop | Contact @endsection
 @section('body')
 <!-- Breadcrumb Section Begin -->
 <section
@@ -50,7 +50,7 @@
         <div class="contact__widget">
           <span class="icon_mail_alt"></span>
           <h4>Email</h4>
-          <p>ogani@gmail.com</p>
+          <p>myshop@gmail.com</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 <html lang="zxx">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Ogani Template" />
+    <meta name="description" content="My Shop" />
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -67,7 +67,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
-        <a href="{{ url('/') }}"
+        <a href="{{ url('/') }}" class="pt-2"
           ><img src="{{ asset('/') }}front-end/img/logo.png" alt=""
         /></a>
       </div>
@@ -99,7 +99,7 @@
       </div>
       <div class="humberger__menu__contact">
         <ul>
-          <li><i class="fa fa-envelope"></i> ogani@gmail.com</li>
+          <li><i class="fa fa-envelope"></i> myshop@gmail.com</li>
           <li>Free Shipping for all Order of $99</li>
         </ul>
       </div>
@@ -114,7 +114,7 @@
             <div class="col-lg-6 col-md-6">
               <div class="header__top__left">
                 <ul>
-                  <li><i class="fa fa-envelope"></i> ogani@gmail.com</li>
+                  <li><i class="fa fa-envelope"></i> myshop@gmail.com</li>
                   <li>Free Shipping for all Order of $99</li>
                 </ul>
               </div>
@@ -204,10 +204,6 @@
             <div class="hero__search">
               <div class="hero__search__form">
                 {!! Form::open(['url' => '/search-product', 'method' => 'post']) !!}
-                  <div class="hero__search__categories">
-                    All Categories
-                    <span class="arrow_carrot-down"></span>
-                  </div>
                   <input type="text" name="search" placeholder="What do yo u need?" />
                   <button type="submit" class="site-btn">SEARCH</button>
                 {!! Form::close() !!}   
@@ -258,7 +254,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  Ogani | All rights reserved
+                  My Shop | All rights reserved
                   <!-- <i class="fa fa-heart" aria-hidden="true"></i> by -->
                   <!-- <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Ogani | Cart @endsection
+@extends("front-end.master") @section('title') My Shop | Cart @endsection
 @section('body')
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" style="background-color: #7fad39;">

@@ -1,4 +1,4 @@
-@extends("front-end.master") @section('title') Ogani | Success @endsection
+@extends("front-end.master") @section('title') My Shop | Success @endsection
 @section('body')
 <div class="container">
     <div class="row">

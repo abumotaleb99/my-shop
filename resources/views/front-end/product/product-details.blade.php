@@ -1,5 +1,5 @@
 
-@extends("front-end.master") @section('title') Ogani | Home @endsection @section('body')
+@extends("front-end.master") @section('title') My Shop | Home @endsection @section('body')
 <!-- Breadcrumb Section Begin -->
 <section
   class="breadcrumb-section set-bg"
