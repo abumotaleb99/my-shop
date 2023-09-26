@@ -9,13 +9,10 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                Today's Money
+                Total Categories
               </p>
               <h5 class="font-weight-bolder mb-0">
-                $53,000
-                <span class="text-success text-sm font-weight-bolder"
-                  >+55%</span
-                >
+                {{ count($totalCategories) }}
               </h5>
             </div>
           </div>
@@ -40,11 +37,10 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                Today's Users
+                Total Brands
               </p>
               <h5 class="font-weight-bolder mb-0">
-                2,300
-                <span class="text-success text-sm font-weight-bolder">+3%</span>
+                {{ count($totalBrands) }}
               </h5>
             </div>
           </div>
@@ -66,11 +62,10 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                New Clients
+                Total Products
               </p>
               <h5 class="font-weight-bolder mb-0">
-                +3,462
-                <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                {{ count($totalProducts) }}
               </h5>
             </div>
           </div>
@@ -94,10 +89,9 @@
         <div class="row">
           <div class="col-8">
             <div class="numbers">
-              <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+              <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Customers</p>
               <h5 class="font-weight-bolder mb-0">
-                $103,430
-                <span class="text-success text-sm font-weight-bolder">+5%</span>
+                {{ count($totalCustomers) }}
               </h5>
             </div>
           </div>

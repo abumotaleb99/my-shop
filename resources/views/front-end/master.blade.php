@@ -100,7 +100,7 @@
       <div class="humberger__menu__contact">
         <ul>
           <li><i class="fa fa-envelope"></i> myshop@gmail.com</li>
-          <li>Free Shipping for all Order of $99</li>
+          <li>Free Shipping for all Order of 99TK</li>
         </ul>
       </div>
     </div>
@@ -115,7 +115,7 @@
               <div class="header__top__left">
                 <ul>
                   <li><i class="fa fa-envelope"></i> myshop@gmail.com</li>
-                  <li>Free Shipping for all Order of $99</li>
+                  <li>Free Shipping for all Order of 99TK</li>
                 </ul>
               </div>
             </div>
