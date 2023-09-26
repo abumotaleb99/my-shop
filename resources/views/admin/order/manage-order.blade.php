@@ -52,7 +52,13 @@
                 </td>
                 <td class="text-end">
                   <a href="{{ url('/order/view-order', ['id' => $order->id]) }}" class="text-secondary font-weight-bold text-xs">
-                    Edit
+                    View Order
+                  </a> |
+                  <a href="{{ url('/order/view-invoice', ['id' => $order->id]) }}" class="text-secondary font-weight-bold text-xs">
+                    View Invoice
+                  </a> |
+                  <a href="{{ url('/order/download-invoice', ['id' => $order->id]) }}" class="text-secondary font-weight-bold text-xs">
+                    Download Invoice
                   </a> |
                   <a href="{{ url('/order/edit-order', ['id' => $order->id]) }}" class="text-secondary font-weight-bold text-xs">
                     Edit

@@ -26,5 +26,21 @@ class OrderController extends Controller
         ]);
     }
 
+    public function viewOrderInfo($id) {
+        $order = Order::find($id);
+        $customer = Customer::find($order->customer_id);
+        $shipping = Shipping::find($order->shipping_id);
+        $payment = Payment::where('order_id', $order->id)->first();
+        $orderDetails = OrderDetail::where('order_id', $order->id)->get(); 
+
+        return view('admin.order.view-order', [
+            'order' => $order,
+            'customer' => $customer,
+            'shipping' => $shipping,
+            'payment' => $payment,
+            'orderDetails' => $orderDetails
+        ]);
+    }
+
 
 }
