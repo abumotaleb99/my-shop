@@ -1,2 +1,2 @@
-email: ogani@gmail.com
-password: 
+email: myshop@gmail.com
+password: 12345678

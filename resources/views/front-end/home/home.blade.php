@@ -22,7 +22,7 @@
                 <a href="{{ url('product-details', ['id' => $latestProduct->id]) }}"><i class="fa fa-retweet"></i></a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <a href="{{ url('product-details', ['id' => $latestProduct->id]) }}"><i class="fa fa-shopping-cart"></i></a>
               </li>
             </ul>
           </div>
